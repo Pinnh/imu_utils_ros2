@@ -11,7 +11,10 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
-find_package(code_utils REQUIRED)
+#find_package(code_utils REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(Ceres REQUIRED)
+find_package(OpenCV REQUIRED)
 
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
@@ -55,7 +58,8 @@ ament_target_dependencies(
   std_msgs
   geometry_msgs
   nav_msgs
-  code_utils
+  #code_utils
+  sensor_msgs
 )
 
 install(
