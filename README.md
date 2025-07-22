@@ -1,3 +1,5 @@
+ROS2 version of imu_util for IMU intrinsic calibration of VINS-Mono or VINS-Fusion
+
 # Build
 colcon build --symlink-install
 
