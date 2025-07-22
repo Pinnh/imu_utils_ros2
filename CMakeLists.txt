@@ -23,7 +23,7 @@ include_directories(
   ${EIGEN3_INCLUDE_DIR}
 )
 
-include_directories("../code_utils/include")
+#include_directories("../code_utils/include")
 
 set(
   ACC_LIB_SOURCE_FILES
