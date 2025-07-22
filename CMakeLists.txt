@@ -13,8 +13,6 @@ find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 #find_package(code_utils REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(Ceres REQUIRED)
-find_package(OpenCV REQUIRED)
 
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
