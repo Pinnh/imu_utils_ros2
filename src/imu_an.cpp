@@ -2,7 +2,7 @@
 #include "acc_lib/fitallan_acc.h"
 #include "gyr_lib/allan_gyr.h"
 #include "gyr_lib/fitallan_gyr.h"
-#include <code_utils/ros_utils.h>
+//#include <code_utils/ros_utils.h>
 #include <geometry_msgs/msg/vector3_stamped.hpp>
 #include <sensor_msgs/msg/imu.hpp>
 #include <iostream>
@@ -48,6 +48,7 @@ void imu_callback(const sensor_msgs::msg::Imu::SharedPtr msg)
       double time_min = (time - start_t) / 60;
       if(time_min > max_time_min)
          end = true;
+      std::cout<<"progress: "<< time_min << "/" << max_time_min<<std::endl;
    }
 }
 
@@ -206,7 +207,7 @@ int main(int argc,char **argv)
 
    n->declare_parameter("imu_topic","/Imu");
    n->declare_parameter("imu_name","imu");
-   n->declare_parameter("data_save_path","/home/knight");
+   n->declare_parameter("data_save_path","./");
    n->declare_parameter("max_time_min",120);
    n->declare_parameter("max_cluster",100);
 
@@ -225,7 +226,7 @@ int main(int argc,char **argv)
    acc_y = new imu::AllanAcc("acc y",max_cluster);
    acc_z = new imu::AllanAcc("acc z",max_cluster);
 
-   std::cout<<"Waiting for IMU data."<<std::endl;
+   std::cout<<"Waiting for IMU data, topic:"<<IMU_TOPIC<<std::endl;
    rclcpp::Rate loop_rate(5);
 
    while(!end)
