@@ -1,6 +1,7 @@
 # Build
 colcon build --symlink-install
 
-#Run
+# Run
 source install/setup.sh
+
 ros2 run imu_utils imu_an
